@@ -2,38 +2,39 @@
 
 ## Getting Started
 
-1. Clone this repo.
-2. Run `rake db:create` to make your database.
-3. Start your app with `rails server`.
-4. Navigate to `localhost:3000` – you should see the Owner's index page.
+1. Fork this repo, and clone it into your `develop` folder on your local machine.
+2. Run `rake db:create` in the Terminal to create your local database.
+3. Run `rails s` in the Terminal to start your server.
+4. Navigate to `localhost:3000` in the browser - you should see the Rails welcome page.
 
-### Making Your Pet Model and Migration
+## Challenges
 
-Generate a Pet model using `rails generate model Pet`. This will create a model file like this:
+#### Model Validations
 
-```ruby
-class Pet < ActiveRecord::Base
-end
-```
+1. Generate a `Pet` model. Pets should have a `name` and a `breed`.
 
-And a corresponding migration file, like this:
+2. Run `rake db:migrate` in the Terminal to create the `pets` table.
 
-```ruby
-class CreatePets < ActiveRecord::Migration
-  def change
-    create_table :pets do |t|
-      # attributes go here
-      t.timestamps null: false
-    end
-  end
-end
-```
+3. Add validations to your `Pet` model. Pets are required to have both `name` and `breed`, and `name` must be at least 3 characters. See the <a href="http://guides.rubyonrails.org/active_record_validations.html" target="_blank">Active Record Validation docs</a> for guidance.
 
-1. Give your Pet table a `name` attribute in the migration using `t.string :name`. This is similar to how you defined your model schemas in Mongoose.
-2. Add a validation to your `pet.rb` model that requires the `presence` of `name` to be `true`. Also require `name` to be at least 3 characters. See the [ActiveRecord validation](http://edgeguides.rubyonrails.org/active_record_validations.html#length) docs for guidance.
-3. Associate your Pet model with an Owner. Use `belongs_to :owner`.
-4. Generate a new migration to add a foreign key, `owner_id` to your Pets table. Use `rails g migration AddOwnerIdToPet owner_id:integer`.
-5. Run `rake db:migrate` to get your database up to date.
+4. In the Terminal, open up the Rails console, and try adding this invalid pet to the database using the `.create` method:
+
+  ```zsh
+  irb(main):001:0> pet = Pet.create(name: "Ty")
+  ```
+
+  What happens?
+
+5. Now try storing this invalid pet in memory with the `.new` method, and check if it's valid:
+
+  ```zsh
+  irb(main):001:0> pet = Pet.new(name: "Ty")
+  irb(main):002:0> pet.valid?
+  ```
+
+6. Use `.errors.full_messages` to display the user-friendly error messages for the invalid pet you just created.
+
+
 
 ### Pets Controller and Routes
 
