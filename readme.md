@@ -3,7 +3,7 @@
 ## Getting Started
 
 1. Fork this repo, and clone it into your `develop` folder on your local machine.
-2. Run `rake db:create` in the Terminal to create your local database.
+2. Run `rake db:create db:migrate` in the Terminal to create your local database and run the migrations.
 3. Run `rails s` in the Terminal to start your server.
 4. Navigate to `localhost:3000` in the browser - you should see the Rails welcome page.
 
@@ -11,13 +11,9 @@
 
 #### Model Validations
 
-1. Generate a `Pet` model. Pets should have a `name` and a `breed`.
+1. Add validations to the `Pet` model. Pets are required to have both `name` and `breed`, and `name` must be at least 3 characters. See the <a href="http://guides.rubyonrails.org/active_record_validations.html" target="_blank">Active Record Validation docs</a> for guidance.
 
-2. Run `rake db:migrate` in the Terminal to create the `pets` table.
-
-3. Add validations to your `Pet` model. Pets are required to have both `name` and `breed`, and `name` must be at least 3 characters. See the <a href="http://guides.rubyonrails.org/active_record_validations.html" target="_blank">Active Record Validation docs</a> for guidance.
-
-4. In the Terminal, open up the Rails console, and try adding this invalid pet to the database using the `.create` method:
+2. In the Terminal, open up the Rails console, and try adding an invalid pet to the database using the `.create` method:
 
   ```zsh
   irb(main):001:0> pet = Pet.create(name: "Ty")
@@ -25,14 +21,14 @@
 
   What happens?
 
-5. Now try storing this invalid pet in memory with the `.new` method, and check if it's valid:
+3. Now try storing the invalid pet in memory with the `.new` method, and check if it's valid:
 
   ```zsh
   irb(main):001:0> pet = Pet.new(name: "Ty")
   irb(main):002:0> pet.valid?
   ```
 
-6. Use `.errors.full_messages` to display the user-friendly error messages for the invalid pet you just created.
+4. Use `.errors.full_messages` to display the user-friendly error messages for the invalid pet you just created.
 
 
 
