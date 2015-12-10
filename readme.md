@@ -1,4 +1,6 @@
-# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Validations &amp; Error-Handling - Challenges
+# <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Rails Validations &amp; Error-Handling
+
+Starter code and challenges for <a href="https://github.com/sf-wdi-24/modules/tree/master/week-07-rails-continued/day-02/module-02">Validations & Error-Handling</a> in Rails.
 
 ## Getting Started
 
@@ -30,45 +32,31 @@
 
 4. Use `.errors.full_messages` to display the user-friendly error messages for the invalid pet you just created.
 
+#### Refactor Pets Controller to Handle Errors
 
-
-### Pets Controller and Routes
-
-1. Generate a Pets controllers using `rails g controller Pets`. This will create a file like this:
+1. The `pets#create` method currently looks like this:
 
   ```ruby
-  class PetsController < ApplicationController
-    # routing actions go here
+  #
+  # app/controllers/pets_controller.rb
+  #
+  def create
+    pet_params = params.require(:pet).permit(:name, :breed)
+    pet = Pet.create(pet_params)
+    redirect_to pet_path(pet)
   end
   ```
 
-2. Define a method in `pets_controller.rb` called `new` and a method called `create`. In **both** methods, assign an instance variable `@pet` to `Pet.new`. Assign an instance variable `@owner` to `Owner.find(params[:owner_id])`.
+  What happens when you navigate to `localhost:3000/pets/new` in the browser and try to submit a blank form?
 
-3. Use an `if / else` block (after your assignment of `@owner` and  `@pet`) in `PetsController#create` to handle valid and invalid form submissions.
-  ```ruby
-    if @pet.save
-      @owner.pets << @pet
-      redirect_to @owner
-    else
-      render 'new'
-    end
-  ```
+  Refactor your `pets#create` controller method to better handle this error. **Hint:** Use `.new` and `.save`.
 
-4. In `config/routes.rb`, add `resources :pets` to the `resources :owners do ... end` block. This will give you access to all seven RESTful routes for Pets.
+2. Once you've refactored `pets#create` to redirect in the case of an error, add flash messages to show the user the specific validation error they triggered, so they won't make the same mistake twice. **Hint:** Set the flash message in the controller, and render the flash message in the layout (`app/views/layouts/application.html.erb`).
 
-### Making your Pet Form
+## Stretch Challenges
 
-1. Create a file in your `views/pets` directory called `new.html.erb`.
-2. Use `form_for` to create a form for `@pet`.
-3. Add an errors `<div>` so that an invalid form submission will cause the page to render with the errors displayed.
+1. You already have routes for `pets#edit` and `pets#update`, since you're calling `resources :pets` in `routes.rb`. Now set up controller methods for `pets#edit` and `pets#update`, as well as a view for editing pets (edit form).
 
-**NOTE:** If you need a refresher on syntax for `form_for` and the errors, refer to the README for examples or look at `views/owners/new.html.erb`.
+2. Make sure your `pets#update` method also handles errors by redirecting if the user submits invalid data and displaying a flash message in the view.
 
-If all is right, you should be able to create new pets and associate them with their owners. Additionally, your awesome error handling should display informative messages on how to properly submit your forms. Great job!
-
-## Stretch: Make update forms, add more validations
-
-- In either `owners_controller.rb`, create `edit` and `update` methods, the former renders a form to edit the owner, and later handles the `PUT` request.
-- Add new attributes to your models with new migrations using `rails g migration Add<SOMEATTRIBUTE>To<MODELNAME>`. Add validations for these new attributes in the models files (`owner.rb` and `pet.rb`). For example:
-  - Add a breed attribute to the `Pet` model by creating a new migration. Add a validation for `breed` in your `models/pet.rb` file. Edit your Pet creation form to include the new `breed` attribute.
-  - Add a email attribute to the `Owner` model by creating a new migration. Add a validation for `email` in your `models/Owner.rb` file. Validate the email using a [Regular Expression](http://edgeguides.rubyonrails.org/active_record_validations.html#format) Edit your Owner creation form to include the new `email` attribute.
+3. Flash messages are great, but a better user experience is to display error messages inline when the user is typing in the form. Flash messages should be the fallback if client-side validation is compromised. Integrate the <a href="http://jqueryvalidation.org/documentation" target="_blank">jQuery validate</a> library into your app, and use it to provide real-time feedback if the user tries to submit invalid form data when creating or updating a pet.
