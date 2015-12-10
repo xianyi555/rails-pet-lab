@@ -10,8 +10,13 @@ class PetsController < ApplicationController
 
   def create
     pet_params = params.require(:pet).permit(:name, :breed)
-    pet = Pet.create(pet_params)
-    redirect_to pet_path(pet)
+    pet = Pet.new(pet_params)
+    if pet.save
+      redirect_to pet_path(pet)
+    else
+      flash[:error] = pet.errors.full_messages.join(", ")
+      redirect_to new_pet_path
+    end
   end
 
   def show
