@@ -59,4 +59,4 @@ Starter code and challenges for <a href="https://github.com/sf-wdi-24/modules/tr
 
 2. Make sure your `pets#update` method also handles errors by redirecting if the user submits invalid data and displaying a flash message in the view.
 
-3. Flash messages are great, but a better user experience is to display error messages inline when the user is typing in the form. Flash messages should be the fallback if client-side validation is compromised. Integrate the <a href="http://jqueryvalidation.org/documentation" target="_blank">jQuery validate</a> library into your app, and use it to provide real-time feedback if the user tries to submit invalid form data when creating or updating a pet.
+3. Read the <a href="http://guides.rubyonrails.org/layouts_and_rendering.html#using-partials" target="_blank">Rails docs for partials</a>, and use a partial to DRY up the code in `new.html.erb` and `edit.html.erb`.
