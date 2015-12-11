@@ -1,9 +1,9 @@
 <%= form_for @pet do |f| %>
   <div class="form-group">
-    <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true, required: true, minlength: 3 %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name", autofocus: true %>
   </div>
   <div class="form-group">
-    <%= f.text_area :breed, class: "form-control", placeholder: "Breed", required: true %>
+    <%= f.text_area :breed, class: "form-control", placeholder: "Breed" %>
   </div>
   <div class="form-group">
     <%= f.submit "Save Pet", class: "btn btn-block btn-default" %>
