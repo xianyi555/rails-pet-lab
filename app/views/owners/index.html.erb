@@ -2,8 +2,8 @@
 <hr>
 <% @owners.each do |owner| %>
   <p>
-    <strong><%= owner.first_name %> <%= owner.last_name %></strong>
-    <%= link_to "view", owner_path(owner) %>
+    <strong><%= link_to "#{owner.first_name} #{owner.last_name}", owner_path(owner) %></strong>
+    (Number of pets: <%= owner.pets.length %>)
   </p>
 <% end %>
 <hr>

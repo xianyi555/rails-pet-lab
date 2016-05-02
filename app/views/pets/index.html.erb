@@ -3,7 +3,7 @@
 <% @owner.pets.each do |pet| %>
   <p>
     <strong><%= link_to pet.name, owner_pet_path(@owner, pet) %></strong>
-    (a <%= my_format_age_helper pet.age %>-year old <%= pet.breed %>)
+    (<%= pet.breed %>)
   </p>
 <% end %>
 <hr>

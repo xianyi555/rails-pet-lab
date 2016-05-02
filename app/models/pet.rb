@@ -17,11 +17,11 @@ class Pet < ActiveRecord::Base
   end
 
   def age
-    if date_of_birth
+    if date_of_birth.nil?
+      nil
+    else
       now = DateTime.now.to_date
       (now - date_of_birth)/365.0
-    else
-      0
     end
   end
 
