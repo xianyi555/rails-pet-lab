@@ -5,5 +5,6 @@
 <p><strong>Date of Birth:</strong> <%= @pet.date_of_birth.strftime("%B %e, %Y") %>
 <p><strong>Age:</strong> <%= my_format_age_helper @pet.age %> years </p>
 <p><%= link_to "edit pet", edit_owner_pet_path(@owner, @pet) %></p>
+<p><%= link_to "delete pet", owner_pet_path(@owner, @pet), method: :delete %></p>
 <hr>
 <p><%= link_to "view all pets for owner #{@owner.email}", owner_pets_path(@owner) %></p>

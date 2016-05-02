@@ -8,7 +8,7 @@ class Pet < ActiveRecord::Base
   validates :breed,
     presence: true
 
-  validate :date_of_birth_cannot_be_in_the_future,
+  validate :date_of_birth_cannot_be_in_the_future
 
   def date_of_birth_cannot_be_in_the_future
     if date_of_birth.present? && date_of_birth > Date.today

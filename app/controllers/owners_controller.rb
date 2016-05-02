@@ -20,17 +20,17 @@ class OwnersController < ApplicationController
 
   def show
     owner_id = params[:id]
-    @owner = Owner.find_by_id(owner_id)
+    @owner = Owner.find_by(id: owner_id)
   end
 
   def edit
     owner_id = params[:id]
-    @owner = Owner.find_by_id(owner_id)
+    @owner = Owner.find_by(id: owner_id)
   end
 
   def update
     owner_id = params[:id]
-    owner = Owner.find_by_id(owner_id)
+    owner = Owner.find_by(id: owner_id)
     if owner.update(owner_params)
       redirect_to owner_path(owner)
     else
@@ -38,6 +38,14 @@ class OwnersController < ApplicationController
       redirect_to edit_owner_path(owner)
     end
   end
+
+  def destroy
+    owner_id = params[:id]
+    owner = Owner.find_by(id: owner_id)
+    owner.destroy
+    redirect_to owners_path
+  end
+
 
   private
   def owner_params
