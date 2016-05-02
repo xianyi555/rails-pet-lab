@@ -3,8 +3,3 @@
 <p><strong>Name:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
 <p><strong>Email:</strong> <%= @owner.email %></p>
 <p><strong>Phone Number:</strong> <%= @owner.phone %></p>
-<p><%= link_to "view pets for this owner", owner_pets_path(@owner) %></p>
-<p><%= link_to "edit this owner", edit_owner_path(@owner) %></p>
-<p><%= link_to "delete this owner", owner_path(@owner), method: :delete %></p>
-<hr>
-<p><%= link_to "view all owners", owners_path %></p>

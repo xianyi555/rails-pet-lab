@@ -9,13 +9,8 @@ class OwnersController < ApplicationController
   end
 
   def create
-    owner = Owner.new(owner_params)
-    if owner.save
-      redirect_to owner_path(owner)
-    else
-      flash[:error] = owner.errors.full_messages.join(", ")
-      redirect_to new_owner_path
-    end
+    owner = Owner.create(owner_params)
+    redirect_to owner_path(owner)
   end
 
   def show
@@ -24,26 +19,15 @@ class OwnersController < ApplicationController
   end
 
   def edit
-    owner_id = params[:id]
-    @owner = Owner.find_by(id: owner_id)
+    # stretch
   end
 
   def update
-    owner_id = params[:id]
-    owner = Owner.find_by(id: owner_id)
-    if owner.update(owner_params)
-      redirect_to owner_path(owner)
-    else
-      flash[:error] = owner.errors.full_messages.join(", ")
-      redirect_to edit_owner_path(owner)
-    end
+    # stretch
   end
 
   def destroy
-    owner_id = params[:id]
-    owner = Owner.find_by(id: owner_id)
-    owner.destroy
-    redirect_to owners_path
+    # stretch
   end
 
 
