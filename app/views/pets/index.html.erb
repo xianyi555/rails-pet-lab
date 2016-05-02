@@ -1,5 +1,10 @@
-<h1>All Pets</h1>
+<h1>All Pets for <%= @owner.email %></h1>
 <hr>
-<% @pets.each do |pet| %>
-  <p><%= pet.name %> - <%= pet.breed %></p>
+<% @owner.pets.each do |pet| %>
+  <p>
+    <strong><%= link_to pet.name, owner_pet_path(@owner, pet) %></strong>
+    (a <%= my_format_age_helper pet.age %>-year old <%= pet.breed %>)
+  </p>
 <% end %>
+<hr>
+<%= link_to "add a pet", new_owner_pet_path(@owner) %>

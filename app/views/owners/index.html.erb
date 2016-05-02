@@ -1,0 +1,10 @@
+<h1>All Owners</h1>
+<hr>
+<% @owners.each do |owner| %>
+  <p>
+    <strong><%= owner.first_name %> <%= owner.last_name %></strong>
+    <%= link_to "view", owner_path(owner) %>
+  </p>
+<% end %>
+<hr>
+<%= link_to "register new owner", new_owner_path %>

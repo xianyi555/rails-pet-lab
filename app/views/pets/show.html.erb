@@ -2,3 +2,7 @@
 <hr>
 <p><strong>Name:</strong> <%= @pet.name %></p>
 <p><strong>Breed:</strong> <%= @pet.breed %></p>
+<p><strong>Age:</strong> <%= my_format_age_helper @pet.age %> years </p>
+<p><%= link_to "edit pet", edit_owner_pet_path(@owner, @pet) %>
+<hr>
+<p><%= link_to "View all pets for client #{@owner.email}", owner_pets_path(@owner) %>

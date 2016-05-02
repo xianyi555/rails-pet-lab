@@ -1,0 +1,6 @@
+<h1>Show Owner</h1>
+<hr>
+<p><strong>Name:</strong> <%= @owner.first_name %><%= @owner.last_name %></p>
+<%= link_to "view pets for this client", owner_pets_path(@owner) %>
+<hr>
+<p><%= link_to "view all owners", owners_path %>
