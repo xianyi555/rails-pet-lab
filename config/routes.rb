@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  root "pets#index"
-  resources :pets
+  root "site#index"
+
+  resources :owners do
+    resources :pets
+  end
 
 end
