@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Owner, type: :model do
-  let (:owner) do
+  subject (:owner) do
     Owner.create({ first_name: "John", last_name: "Doe", email: "j_doe@example.com", phone: nil})
   end
 
