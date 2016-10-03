@@ -1,10 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Owners
 Owner.destroy_all
@@ -20,7 +15,6 @@ owners_data = []
     phone: FFaker::PhoneNumber.phone_number
   }
 end
-
 owners = Owner.create(owners_data)
 
 # Pets
@@ -42,5 +36,6 @@ owners = Owner.create(owners_data)
 #     # date_of_birth: random_recent_date(3.0, 2000.0)
 #   }
 #   pet = Pet.create(pet_data)
-#   owners.sample.pets << pet
+#   random_owner = owners.sample
+#   random_owner.pets << pet
 # end
