@@ -19,6 +19,12 @@ Practice:
 5. Navigate to `localhost:3000` in the browser - you should see a generic `site#index` page.   
 6. Run `rails routes` to see what routes are available in the app.
 
+## Sharing 
+
+When you're finished working on the pet app:  
+- add a 3-5 sentence reflecton on this app to the top of your readme  
+- push your work to the master branch of your GitHub fork  
+- add a link to your repo on the "My Work" section of your website  
 
 ## Part 1: Owner Validations and Error Handling
 
