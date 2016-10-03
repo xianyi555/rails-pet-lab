@@ -1,6 +1,14 @@
 # <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Pet App!
 
-Starter code and challenges for Validations & Error-Handling in Rails.
+## Overview
+
+Track owners and pets!
+
+## Objectives
+
+Practice:  
+- validations and error handling  
+- associations (one-to-many)  
 
 ## Getting Started
 
@@ -11,6 +19,12 @@ Starter code and challenges for Validations & Error-Handling in Rails.
 5. Navigate to `localhost:3000` in the browser - you should see a generic `site#index` page.   
 6. Run `rails routes` to see what routes are available in the app.
 
+## Sharing 
+
+When you're finished working on the pet app:  
+- add a 3-5 sentence reflecton on this app to the top of your readme  
+- push your work to the master branch of your GitHub fork  
+- add a link to your repo on the "My Work" section of your website  
 
 ## Part 1: Owner Validations and Error Handling
 
