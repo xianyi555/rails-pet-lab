@@ -19,7 +19,7 @@ RSpec.describe Owner, type: :model do
     context "when validating an email" do
       it "contains an @ symbol" do
         owner.email = "asdf"
-        expect{owner.save!}.to raise_error
+        expect{owner.save!}.to raise_error ActiveRecord::RecordInvalid
       end
     end
 
