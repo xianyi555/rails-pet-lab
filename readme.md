@@ -223,28 +223,28 @@ Nest routes for pets inside the routes for owners. Start with just an few routes
 1. If there is an error in the creation of the new pet, add a flash message.  Redirect back to the new pet form for that owner.
 
 
-  ## Stretch Challenges
+## Part 3: Choose Your Own Adventure
 
-  Three types of stretch challenges lay before you. Pick and choose any you find interesting. Solutions are provided.
+Three types of stretch challenges lay before you. Pick and implement the set(s) you find interesting. Solutions are provided.
 
-  #### Circumnavigate the Site for User Experience
+#### Circumnavigate the Site for User Experience
 
-  Practice using path helper methods by adding `link_to`s to help users move among the pages of your site. Consider adding:  
-    * a link to the owner index from the owner show page
-    * a link to the owner's show page from the list of their pets
-    * a link to the owner's list of pets from the pet show page
-    * a link to the site index on every page (keep it DRY!)
+Practice using path helper methods by adding `link_to`s to help users move among the pages of your site. Consider adding:  
+  * a link to the owner index from the owner show page
+  * a link to the owner's show page from the list of their pets
+  * a link to the owner's list of pets from the pet show page
+  * a link to the site index on every page (keep it DRY!)
 
-  #### Follow the Routes to Full CRUD
+#### Follow the Routes to Full CRUD
 
-  Create or fill in routes, controllers, and views for the missing crud actions for owners and pets.  Choose one route at a time. It might be easiest to start with `destroy`; just remember the difference between `destroy` and `delete`!
+Create or fill in routes, controllers, and views for the missing crud actions for owners and pets.  Choose one route at a time. It might be easiest to start with `destroy`; just remember the difference between `destroy` and `delete`!
 
-  #### Play with Pets!
+#### Play with Pets!
 
-  Practice your Ruby skills - get more time with the `Date` and `DateTime` built-in classes.
+Practice your Ruby skills - get more time with the `Date` and `DateTime` built-in classes.
 
-  1. Generate and run a migration to add a `date_of_birth` field to the `Pet` model. The type of this field should be `date`.  Display the pet's `date_of_birth` in the view for `pets#show`.
+1. Generate and run a migration to add a `date_of_birth` field to the `Pet` model. The type of this field should be `date`.  Display the pet's `date_of_birth` in the view for `pets#show`.
 
-  1. Fill in the `Pet` model's `date_of_birth_cannot_be_in_the_future` method. This method should add an error to the validation errors if the pet's `date_of_birth` is in the future.  See the [Validations](http://guides.rubyonrails.org/active_record_validations.html#custom-methods) Rails guide.
+1. Fill in the `Pet` model's `date_of_birth_cannot_be_in_the_future` method. This method should add an error to the validation errors if the pet's `date_of_birth` is in the future.  See the [Validations](http://guides.rubyonrails.org/active_record_validations.html#custom-methods) Rails guide.
 
-  1. Fill in the `Pet` model's `age` instance method. If the pet instance has a `date_of_birth`, this method should calculate and return the pet's age in years (as a decimal).  If the pet doesn't have a `date_of_birth`, the `age` method should return `nil`.  Display the pet's `age` in the view for `pets#show`.
+1. Fill in the `Pet` model's `age` instance method. If the pet instance has a `date_of_birth`, this method should calculate and return the pet's age in years (as a decimal).  If the pet doesn't have a `date_of_birth`, the `age` method should return `nil`.  Display the pet's `age` in the view for `pets#show`.
