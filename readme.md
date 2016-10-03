@@ -12,17 +12,18 @@ Practice:
 
 ## Getting Started
 
-1. Fork this repo, and clone it into your WDI class folder on your local machine.
+1. Fork this repo, and clone it into your WDI class folder on your local machine. Change directories into the project directory.
 2. Run `bundle` in the Terminal to install gems from the Gemfile. (Feel free to take a look at what's included, first.)
 3. Run `rails db:create db:migrate` in the Terminal to create your local database and run the migrations.
 4. Run `rails s` in the Terminal to start your server.
 5. Navigate to `localhost:3000` in the browser - you should see a generic `site#index` page.   
 6. Run `rails routes` to see what routes are available in the app.
+7. Run `rails notes` to see some of the things you'll do with this app
 
-## Sharing 
+## Sharing
 
 When you're finished working on the pet app:  
-- add a 3-5 sentence reflecton on this app to the top of your readme  
+- add a 3-5 sentence reflection on this app to the top of your readme  
 - push your work to the master branch of your GitHub fork  
 - add a link to your repo on the "My Work" section of your website  
 
