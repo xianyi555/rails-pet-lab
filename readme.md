@@ -21,7 +21,7 @@ Practice:
 6. Run `rails routes` to see what routes are available in the app.
 7. Run `rails notes` to see some of the things you'll do with this app
 
-## Part 1: Owners Have Many Pets
+## [Part 1: Owners Have Many Pets](docs/part-1.md)
 
 ![owner-pet-erd](https://cloud.githubusercontent.com/assets/3254910/22278438/6dd48c66-e278-11e6-8ed6-d24af148672b.png)
 
@@ -34,7 +34,7 @@ In this part, you'll:
 And more!
 
 
-## Part 2: Pets Have Many Appointments
+## [Part 2: Pets Have Many Appointments](docs/part-2.md)
 
 ![owner-pet-appointment-erd](https://cloud.githubusercontent.com/assets/3254910/22278437/6bc4468c-e278-11e6-9813-1855a623a323.png)
 
@@ -48,18 +48,18 @@ In this part, you'll:
 
 And more!
 
-## Part 3: Owners Have Many Appointments, through Pets
+## [Part 3: Owners Have Many Appointments, through Pets](docs/part-3.md)
 
 ![has-many-through](https://cloud.githubusercontent.com/assets/3254910/22279369/4fbfcff4-e27f-11e6-94a9-472309b0cdb3.png)
 
 In this part, you'll:
 
-* Add a new association between the `Owner` and `Appointment` models so that an owner has many appointments through their pets.
+* Create a shortcut -- add a new association between the `Owner` and `Appointment` models so that an owner has many appointments through their pets.
 
 And more!
 
 
-## Part 4: Optional Extras / Choose Your Own Adventure
+## [Part 4: Optional Extras / Choose Your Own Adventure](docs/part-4.md)
 
 In this optional section, you could try one of the following tasks:
 
@@ -68,3 +68,15 @@ In this optional section, you could try one of the following tasks:
 * Full CRUD: Create or fill in routes, controllers, and views for the missing crud actions for owners, pets, and/or appointments.  
 
 * Model Methods: Practice your Ruby skills, and get more time with the `Date` and `DateTime` built-in classes by creating custom model methods.
+
+## [Part V: Owner & Pet Validations](docs/part-v.md)
+
+In this part, you'll:
+
+* Add validations to owners to pass tests.
+
+* Use flash messages to tell users what's wrong if owner creation fails.
+
+* Use TDD for pet validations - write tests to make sure the model requires a name and breed. Then write code to pass your tests.
+
+And more!
