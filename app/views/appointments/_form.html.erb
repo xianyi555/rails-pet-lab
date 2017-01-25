@@ -1,0 +1,16 @@
+<h2>appointment _form partial</h2>
+<p>Find me in app/views/appointments/_form.html.erb</p>
+<%= form_for [@pet, @appointment] do |f| %>
+  <div class="form-group">
+    <%= f.text_field :veterinarian, class: "form-control", placeholder: "Veterinarian Name", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :reason, class: "form-control", placeholder: "Reason for Appointment" %>
+  </div>
+  <div class="form-group">
+    <%= f.datetime_local_field :time, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Save Appointment", class: "btn btn-block btn-success" %>
+  </div>
+<% end %>
