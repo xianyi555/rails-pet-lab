@@ -7,7 +7,7 @@ Track owners and pets!
 ### Objectives
 
 Practice:    
-- associations (one-to-many)  
+- one-to-many associations  
 - validations and error handling
 
 ### Getting Started
