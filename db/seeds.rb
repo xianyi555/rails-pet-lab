@@ -18,17 +18,17 @@ end
 owners = Owner.create(owners_data)
 
 # Pets
-#
+
 # def random_pet_breed
 #   ["dog", "cat", "reptile", "rabbit", "rodent", "rock", "amphibian", "giant robot", "fish"].sample
 # end
-#
+
 # def random_recent_date(min_days_ago, max_days_ago)
 #   rng = Random.new
 #   (DateTime.now - rng.rand(min_days_ago..max_days_ago)).to_date
 # end
-#
-#
+
+
 # 12.times do
 #   pet_data = {
 #     name: FFaker::Name.first_name,
