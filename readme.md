@@ -13,13 +13,13 @@ Practice:
 ### Getting Started
 
 1. Fork this repo, and clone it into your WDI class folder on your local machine. Change directories into the project directory.
+1. Add the class copy of this repo as a new remote: `git remote add upstream https://github.com/sf-wdi-34/rails-pet-lab`.  
 2. Run `bundle` in the Terminal to install gems from the Gemfile. (Feel free to take a look at what's included, first.)
 3. Run `rails db:create db:migrate` in the Terminal to create your local database and run the migrations.
 4. Run `rails s` in the Terminal to start your server.
 5. Navigate to `localhost:3000` in the browser - you should see a generic `site#index` page.   
 6. Run `rails routes` to see what routes are available in the app.
 7. Run `rails notes` to see some of the things you'll do with this app
-
 
 ## Part 1: Owners Have Many Pets
 
