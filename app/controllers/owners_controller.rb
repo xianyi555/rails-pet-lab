@@ -30,6 +30,7 @@ class OwnersController < ApplicationController
     # stretch
   end
 
+  # TODO: add custom appointments action for convenience
 
   private
   def owner_params
