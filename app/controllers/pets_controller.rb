@@ -1,7 +1,8 @@
 class PetsController < ApplicationController
 
   def index
-    # TODO: set up data for index view
+    owner_id = params[:owner_id]
+    @owner = Owner.find_by(id: owner_id)
   end
 
   def show

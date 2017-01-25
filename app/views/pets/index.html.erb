@@ -1,2 +1,9 @@
 <h1>All Pets for <%= @owner.email %></h1>
 <hr>
+<ul class="list-group">
+<% @owner.pets.each do |pet| %>
+  <li class="list-group-item">
+    <%= link_to pet.name, pet_path(pet) %>
+  </li>
+<% end %>
+</ul>
