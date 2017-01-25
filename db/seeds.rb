@@ -2,7 +2,6 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 # Destroy everything to rebuild
-Appointment.destroy_all
 Pet.destroy_all
 Owner.destroy_all
 
