@@ -54,7 +54,9 @@ And more!
 
 In this part, you'll:
 
-* Create a shortcut -- add a new association between the `Owner` and `Appointment` models so that an owner has many appointments through their pets.
+* See an alternate way to use `has_many through:` for creating a "shortcut" instead of a many-to-many association.
+
+* Add a new association between the `Owner` and `Appointment` models so that an owner has many appointments through their pets.
 
 And more!
 
