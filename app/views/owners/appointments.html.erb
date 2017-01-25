@@ -1,0 +1,14 @@
+<h1>Appointments for @owner.email</h1>
+<hr>
+<ul class="list-group">
+  <% @owner.appointments.each do |appointment| %>
+    <li class="list-group-item">
+      <p><strong>Pet:</strong> <%= link_to appointment.pet.name, pet_path(appointment.pet) %> </p>
+      <p><strong>Time:</strong> <%= appointment.time.localtime.to_formatted_s(:short)  %></p>
+      <p><strong>Veterinarian:</strong> <%= appointment.veterinarian %></p>
+      <p><strong>Reason:</strong> <%= appointment.reason %></p>
+    </li>
+  <% end %>
+</ul>
+
+<p>Add appointments through an individual pet page!</p>
