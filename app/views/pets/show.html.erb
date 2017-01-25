@@ -2,3 +2,18 @@
 <hr>
 <p><strong>Name:</strong> <%= @pet.name %></p>
 <p><strong>Breed:</strong> <%= @pet.breed %></p>
+
+<hr>
+<h2>Appointments</h2>
+<ul class="list-group">
+<% @pet.appointments.each do |appointment| %>
+  <li class="list-group-item">
+    <p><strong>Time:</strong> <%= appointment.time.localtime.to_formatted_s(:short)  %></p>
+    <p><strong>Veterinarian:</strong> <%= appointment.veterinarian %></p>
+    <p><strong>Reason:</strong> <%= appointment.reason %></p>
+  </li>
+<% end %>
+</ul>
+<%= link_to "Add Appointment", new_pet_appointment_path(@pet) %>
+
+<hr>
