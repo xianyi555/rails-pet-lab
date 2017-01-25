@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502012640) do
+ActiveRecord::Schema.define(version: 20170125064327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,13 +27,11 @@ ActiveRecord::Schema.define(version: 20160502012640) do
   create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.string   "breed"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "owner_id"
-    t.date     "date_of_birth"
+    t.index ["owner_id"], name: "index_pets_on_owner_id", using: :btree
   end
-
-  add_index "pets", ["owner_id"], name: "index_pets_on_owner_id", using: :btree
 
   add_foreign_key "pets", "owners"
 end

@@ -1,11 +1,13 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
-# Owners
+# Destroy everything to rebuild
+Pet.destroy_all
 Owner.destroy_all
 
+# Owners
 owners_data = []
-8.times do
+4.times do
   first = FFaker::Name.first_name
   last = FFaker::Name.last_name
   owners_data << {
@@ -17,25 +19,29 @@ owners_data = []
 end
 owners = Owner.create(owners_data)
 
+# Generate a random date between
+# min_days_from_now days from now and
+# max_days_from_now days from now.
+# Both arguments can be negative, but
+# min_days_from_now must be less than
+# or equal to max_days_from_now.
+def random_date(min_days_from_now, max_days_from_now)
+  rng = Random.new
+  (DateTime.now + rng.rand(min_days_from_now..max_days_from_now)).to_date
+end
+
 # Pets
+def random_pet_breed
+  ["dog", "cat", "reptile", "rabbit", "rodent", "rock", "amphibian", "giant robot", "fish"].sample
+end
 
-# def random_pet_breed
-#   ["dog", "cat", "reptile", "rabbit", "rodent", "rock", "amphibian", "giant robot", "fish"].sample
-# end
-
-# def random_recent_date(min_days_ago, max_days_ago)
-#   rng = Random.new
-#   (DateTime.now - rng.rand(min_days_ago..max_days_ago)).to_date
-# end
-
-
-# 12.times do
-#   pet_data = {
-#     name: FFaker::Name.first_name,
-#     breed: random_pet_breed,
-#     # date_of_birth: random_recent_date(3.0, 2000.0)
-#   }
-#   pet = Pet.create(pet_data)
-#   random_owner = owners.sample
-#   random_owner.pets << pet
-# end
+6.times do
+  pet_data = {
+    name: FFaker::Name.first_name,
+    breed: random_pet_breed,
+    # date_of_birth: random_date(-2000.0, -3.0) #between 2000 and 3 days ago
+  }
+  pet = Pet.create(pet_data)
+  random_owner = owners.sample
+  random_owner.pets << pet
+end
