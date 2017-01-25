@@ -1,5 +1,7 @@
 class Pet < ActiveRecord::Base
   # TODO: associate with owner
+  
+  # TODO: associate with appointments
 
   # TODO: validate name and breed
 
