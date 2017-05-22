@@ -67,6 +67,7 @@ Nest routes for pets inside the routes for owners. Start with just an few routes
     <summary>Hint: What data will this view need from the controller?</summary>
     Since we're looking for the pets from a single owner, the view will need to know which owner to use (<code>@owner</code>). If you have your model relationship set up correctly, an owner's pets are simply <code>@owner.pets</code>.
   </details>
+  <br>
 
 3. Add a link to each pet's name that leads to the pet's show page.  Remember to use `link_to`.
 
@@ -86,14 +87,14 @@ Nest routes for pets inside the routes for owners. Start with just an few routes
     <summary>Hint: research help?</summary>
     The top google result for "form_for nested resource" is a StackOverflow question, and the top answer has the necessary syntax.  Take a look at [the answer](http://stackoverflow.com/a/4611932).
   </details>
-
+  <br>
 3. Add a `new` action to the pets controller, and have the controller retrieve the data necessary to create a new pet for a particular owner.
 
   <details>
     <summary>Hint: what data is necessary?</summary>
     Like with most <code>new</code> actions, you'll want a dummy new pet (<code>Pet.new</code>) to send through to the <code>form_for</code> helper. Since this pet is being added to a particular owner, you'll also need to use that owner's information.
   </details>
-
+  <br>
   > At this point, you may notice that `app/views/pets` and `app/views/owners` contain `create.html.erb` files. Create isn't a GET action! Remove these unnecessary, unused files.
 
 4. Add a `create` action definition to the pets controller.  This action will need to make and save a new pet. If the save is successful, it will also need to find the correct owner and add the pet to the owner's list of pets.  It can redirect to the new pet's show page after the creation is successful.
