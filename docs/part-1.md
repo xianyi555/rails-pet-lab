@@ -95,6 +95,7 @@ Nest routes for pets inside the routes for owners. Start with just an few routes
     Like with most <code>new</code> actions, you'll want a dummy new pet (<code>Pet.new</code>) to send through to the <code>form_for</code> helper. Since this pet is being added to a particular owner, you'll also need to use that owner's information.
   </details>
   <br>
-  > At this point, you may notice that `app/views/pets` and `app/views/owners` contain `create.html.erb` files. Create isn't a GET action! Remove these unnecessary, unused files.
+  
+> At this point, you may notice that `app/views/pets` and `app/views/owners` contain `create.html.erb` files. Create isn't a GET action! Remove these unnecessary, unused files.
 
 4. Add a `create` action definition to the pets controller.  This action will need to make and save a new pet. If the save is successful, it will also need to find the correct owner and add the pet to the owner's list of pets.  It can redirect to the new pet's show page after the creation is successful.
