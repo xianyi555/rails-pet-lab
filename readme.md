@@ -13,7 +13,7 @@ Practice:
 ### Getting Started
 
 1. Fork this repo, and clone it onto your local machine. Change directories into the project directory.
-1. Add the class copy of this repo as a new remote: `git remote add upstream https://github.com/sf-wdi-37/rails-pet-lab`.  
+1. Add the class copy of this repo as a new remote: `git remote add upstream https://github.com/sf-wdi-labs/rails-pet-lab` so that you can [easily get any updates from the class copy if needed](https://help.github.com/articles/syncing-a-fork/).  
 2. Run `bundle` in the Terminal to install gems from the Gemfile. (Feel free to take a look at what's included, first.)
 3. Run `rails db:create db:migrate` in the Terminal to create your local database and run the migrations.
 4. Run `rails s` in the Terminal to start your server.
