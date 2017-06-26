@@ -88,6 +88,7 @@ Nest routes for pets inside the routes for owners. Start with just an few routes
     The top google result for "form_for nested resource" is a StackOverflow question, and the top answer has the necessary syntax.  Take a look at [the answer](http://stackoverflow.com/a/4611932).
   </details>
   <br>
+  
 3. Add a `new` action to the pets controller, and have the controller retrieve the data necessary to create a new pet for a particular owner.
 
   <details>
