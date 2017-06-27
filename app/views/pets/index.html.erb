@@ -1,2 +1,8 @@
-<h1>All Pets for <%= @owner.email %></h1>
+<h1>All Pets for  <%= @potato.first_name %></h1>
 <hr>
+
+<% @pets.each do |pet| %>
+  <li><%= link_to pet.name, pet_path(pet) %></li>
+<% end %>
+<br>
+<%= link_to "add a pet for #{@potato.first_name}", new_owner_pet_path(@potato) %>

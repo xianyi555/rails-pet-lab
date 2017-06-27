@@ -3,3 +3,5 @@
 <p><strong>Name:</strong> <%= @owner.first_name %> <%= @owner.last_name %></p>
 <p><strong>Email:</strong> <%= @owner.email %></p>
 <p><strong>Phone Number:</strong> <%= @owner.phone %></p>
+<%= link_to "see this owner's pets", owner_pets_path(@owner) %>
+<!-- "/owners/#{@owner.id}/pets" -->

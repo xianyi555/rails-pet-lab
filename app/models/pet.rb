@@ -1,5 +1,6 @@
 class Pet < ActiveRecord::Base
   # TODO: associate with owner
+  belongs_to :owner, optional: true
   
   # TODO: associate with appointments
 
