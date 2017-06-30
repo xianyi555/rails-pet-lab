@@ -108,7 +108,9 @@
     The tests for the `Owner` model are in `spec/models/owner_spec`.
   </details>
 
-1. Add validations to the `Pet` model. Then, test your validations with `rspec spec/models/pet_spec.rb`.  If you're not sure of the quality of your tests, try a few valid and invalid inputs in the console to make sure invalid inputs don't get saved.
+2. Add validations to the `Pet` model. Then, test your validations with `rspec spec/models/pet_spec.rb`.  If you're not sure of the quality of your tests, try a few valid and invalid inputs in the console to make sure invalid inputs don't get saved.
 
 
-1. In the pet controller, modify the `create` action. If there is an error in the creation of the new pet, add a flash message.  Then, redirect back to the new pet form for that owner.
+3. In the pet controller, modify the `create` action. If there is an error in the creation of the new pet, add a flash message.  Then, redirect back to the new pet form for that owner.
+
+4. Stretch: add tests for the `date_of_birth_cannot_be_in_the_future` and `age` model methods of the `Pet` model class.
