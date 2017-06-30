@@ -94,6 +94,7 @@
 
 #### Model Validation for Pets
 
+0. Add a `date_of_birth` field to the pets table if you don't have one yet. Use a migration! Use a date type!
 1. Practice TDD.  Pets are required to have both `name` and `breed`, and `name` cannot be longer than 255 characters. Using the `Owner` model tests as an example, write tests for these validations.
 
   > Note that two gems are included to add extra Rails-appropriate RSpec features to this project:  [`rspec-rails`](https://www.relishapp.com/rspec/rspec-rails/docs) and [`shoulda-matchers`](http://matchers.shoulda.io/). You can see where they're set up in `Gemfile` and `spec/rails_helper.rb`.
