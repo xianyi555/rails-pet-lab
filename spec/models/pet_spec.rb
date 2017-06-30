@@ -16,7 +16,7 @@ RSpec.describe Pet, type: :model do
 
     # TODO: that it validates the length of the name is <= 255
     it { should validate_length_of(:name).is_at_most(255) }
-    
+
     # TODO: test that it requires breed
     it { should validate_presence_of(:breed) }
   end
