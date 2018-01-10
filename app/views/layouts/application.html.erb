@@ -16,10 +16,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
+        <% if flash[:error] %>
+          <div class="notice"><%= flash[:error] %></div>
+        <% end %>
         <%= yield %>
       </div>
     </div>
   </div>
+
 
   <!-- application javascript file -->
   <%= javascript_include_tag :application %>

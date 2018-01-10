@@ -9,12 +9,18 @@ class OwnersController < ApplicationController
   end
 
   def create
-    owner = Owner.create(owner_params)
-    redirect_to owner_path(owner)
+    @owner = Owner.new(owner_params)
+    if @owner.save
+      redirect_to owner_path(@owner)
+    else
+      redirect_to new_owner_path
+      flash[:error] = "Error has occur"
+    end
   end
 
   def show
     owner_id = params[:id]
+
     @owner = Owner.find_by(id: owner_id)
   end
 
